@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 
 <Layout title="Welcome to Page.">
   <div class="page-wrapper">
-    <div><a href="/">⬅ Back to Home</a></div>
+    <div><a class="back-button"href="/">⬅ Back to Home</a></div>
     {frontmatter.bannerImage && <div><img class="banner-image" src={frontmatter.bannerImage}/></div>}
     <div class="page-content">
       <h1>{frontmatter.title}</h1>
@@ -26,8 +26,7 @@ const { frontmatter } = Astro.props;
   .banner-image {
     width: 100%;
   }
-  a {
-    color: white;
+  .back-button {
     padding: 10px;
   }
   .page-content {
