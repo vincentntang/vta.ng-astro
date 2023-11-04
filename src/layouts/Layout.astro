@@ -17,46 +17,83 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
+  <style is:global>
+    /* Global Resets */
+    html {
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      background-image: radial-gradient(
+          white,
+          rgba(255, 255, 255, 0.2) 2px,
+          transparent 10px
+        ),
+        radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 5px),
+        radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 10px),
+        radial-gradient(
+          rgba(255, 255, 255, 0.4),
+          rgba(255, 255, 255, 0.1) 2px,
+          transparent 5px
+        );
+      background-size:
+        550px 550px,
+        350px 350px,
+        250px 250px,
+        150px 150px;
+      background-position:
+        0 0,
+        40px 60px,
+        130px 270px,
+        70px 100px;
+    }
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+      );
+    }
+
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 800px;
+      max-width: calc(100% - 2rem);
+      color: white;
+    }
+
+		/* Tried to spec this in page.astro but didn't work */
+		a { 
+			color: white;
+		}
+  </style>
 </html>
-<style is:global>
-  /* Global Resets */
-  html {
-    box-sizing: border-box;
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-  }
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>

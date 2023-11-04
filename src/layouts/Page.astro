@@ -1,0 +1,35 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout title="Welcome to Page.">
+  <div class="page-wrapper">
+    <div><a class="back-button"href="/">⬅ Back to Home</a></div>
+    {frontmatter.bannerImage && <div><img class="banner-image" src={frontmatter.bannerImage}/></div>}
+    <div class="page-content">
+      <h1>{frontmatter.title}</h1>
+      <slot />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-wrapper {
+    background-color: #23262d;
+    padding: 30px;
+    border-radius: 15px;
+  }
+  h1 {
+    margin-top: 0px !important;
+  }
+  .banner-image {
+    width: 100%;
+  }
+  .back-button {
+    padding: 10px;
+  }
+  .page-content {
+    padding-top: 30px;
+  }
+</style>
