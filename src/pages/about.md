@@ -1,8 +1,11 @@
 ---
-title: Hello, world
+title: About
 layout: ../layouts/Page.astro
+bannerImage: /page/yespirate.png
 ---
 
-# Hey there!
+Hi, my name is Vincent Tang
 
-Look at me
+I am a software developer based in Tampa, FL.
+
+I am best known for creating [Tampa Devs](https://tampadevs.com)

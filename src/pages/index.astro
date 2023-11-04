@@ -4,33 +4,35 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <p><span class="text-gradient">Vta.ng</span></p>
-  <div class="hero-header">
-    <img class="hero-image" src="/vincent_blue.jpeg" />
-    <div>
-      <p>Hi, my name is Vincent</p>
-      <p>Welcome to my homepage</p>
-      <p>I like making stuff</p>
-    </div>
-  </div>
-  <ul role="list" class="link-card-grid">
-    <Card href="/about" title="About" body="More about me" />
-    <Card
-      href="https://instagram.com/backpack_vinny"
-      title="Hardware Projects"
-      body="Cool stuff I've built"
-    />
-    <Card
-      href="https://instagram.com/vinnycooksthings"
-      title="Cooking"
-      body="Random stuff I've cooked"
-    />
-    <Card
-      href="https://vincentntang.com"
-      title="Blog"
-      body="Coding and leadership blog notes I've written"
-    />
-  </ul>
+	<div class="home">
+		<p><span class="text-gradient">Vta.ng</span></p>
+		<div class="hero-header">
+			<img class="hero-image" src="/vincent_blue.jpeg" />
+			<div>
+				<p>Hi, my name is Vincent</p>
+				<p>Welcome to my homepage</p>
+				<p>I like making stuff</p>
+			</div>
+		</div>
+		<ul role="list" class="link-card-grid">
+			<Card href="/about" title="About" body="More about me" />
+			<Card
+				href="https://instagram.com/backpack_vinny"
+				title="Hardware Projects"
+				body="Cool stuff I've built"
+			/>
+			<Card
+				href="https://instagram.com/vinnycooksthings"
+				title="Cooking"
+				body="Random stuff I've cooked"
+			/>
+			<Card
+				href="https://vincentntang.com"
+				title="Blog"
+				body="Coding and leadership blog notes I've written"
+			/>
+		</ul>
+	</div>
   <style>
     .hero-header {
       display: flex;
@@ -64,5 +66,9 @@ import Card from "../components/Card.astro";
       gap: 2rem;
       padding: 0;
     }
+		.home {
+			font-size: 20px;
+			line-height: 1.6;
+		}
   </style>
 </Layout>
